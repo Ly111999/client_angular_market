@@ -1,0 +1,38 @@
+<h2 style="text-align: center">List coin</h2>
+<div class="d-flex justify-content-around">
+  <div class="card w-25 mb-5 mt-5">
+    <select [(ngModel)]="market" class="form-control">
+      <option value="0" selected>__marketId__</option>
+      <option *ngFor="let m of markets | async" [ngValue]="m.id">{{m.name}}</option>
+    </select>
+    <button class="btn btn-info" (click)="findByMarketId()">Filter by market Id</button>
+  </div>
+  <div class="card w-25 mb-5 mt-5">
+    <input type="text" [(ngModel)]="name" placeholder="search">
+    <button class="btn btn-info" (click)="findByName()">Filter by name</button>
+  </div>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">baseAsset</th>
+    <th scope="col">quoteAsset</th>
+    <th scope="col">lastPrice</th>
+    <th scope="col">marketId</th>
+    <th scope="col">createdAt</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let coin of coins | async; let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{coin.name}}</td>
+    <td>{{coin.baseAsset}}</td>
+    <td>{{coin.quoteAsset}}</td>
+    <td>{{coin.lastPrice}}</td>
+    <td>{{coin.marketId }}</td>
+    <td>{{coin.createdAtMLS | date: 'dd/MM/yyyy'}}</td>
+  </tr>
+  </tbody>
+</table>

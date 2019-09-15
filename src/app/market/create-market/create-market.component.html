@@ -1,0 +1,15 @@
+<h3 class="text-center">Add new market</h3>
+<div class="d-flex justify-content-center">
+  <form (ngSubmit)="onSubmit()" class="w-25" #form="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="market.name" name="name" #name="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" [(ngModel)]="market.description" name="description" #name="ngModel">
+    </div>
+    <button type="submit" class="btn btn-success" >Submit</button>
+  </form>
+</div>

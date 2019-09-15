@@ -1,0 +1,26 @@
+<h3 class="text-center">Add new market</h3>
+<div class="d-flex justify-content-center">
+  <form (ngSubmit)="onSubmit()" class="w-25" #form="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" [(ngModel)]="coin.name" name="name" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="lastPrice">lastPrice</label>
+      <input type="text" class="form-control" [(ngModel)]="coin.lastPrice" name="lastPrice" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="baseAsset">baseAsset</label>
+      <input type="text" class="form-control" [(ngModel)]="coin.baseAsset" name="baseAsset" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="quoteAsset">quoteAsset</label>
+      <input type="text" class="form-control" [(ngModel)]="coin.quoteAsset" name="quoteAsset" #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="volumn24h">volumn24h</label>
+      <input type="text" class="form-control" [(ngModel)]="coin.volumn24h" name="volumn24h" #name="ngModel">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
